@@ -1,1 +1,2 @@
 # Extração de API Coin Base - Projeto completo de ETL com Python# ProjetoETLCoinbase
+atualizado
