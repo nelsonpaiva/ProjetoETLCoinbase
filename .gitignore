@@ -1,0 +1,8 @@
+#cria uma barreira entre o meu código e o Git
+#para que o Git não faça o versionamento dos arquivos listados aqui dentro
+#útil para arquivos de configuração, credenciais, ambientes virtuais, etc.
+#Exemplos:
+#*.env
+#venv/
+.venv
+.env

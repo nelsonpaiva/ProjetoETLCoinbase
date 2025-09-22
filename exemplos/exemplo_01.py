@@ -26,7 +26,12 @@ url = 'https://www.google.com/'
 #método POST
 resposta = requests.post(url)
 
-print(resposta)
+#print(resposta)
+#print(resposta.text)
+# traz o conteúdo da página
+print(resposta.headers)
+# traz os cabeçalhos da página
+
 # O resultado é: <Response [405]>  (código de status HTTP)
 # Olhando o mapa mental, pela família de retorno o código 405 é da família 4xx, que é erro do cliente
 # Família do 4xx: erro do cliente
