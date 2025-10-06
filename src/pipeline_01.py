@@ -1,3 +1,4 @@
+import time
 import requests  # Importa a biblioteca requests para fazer requisições HTTP
 from tinydb import TinyDB  # Importa a classe TinyDB da biblioteca tinydb para manipulação de banco de dados NoSQL
 from datetime import datetime  # Importa a classe datetime para manipulação de datas e horas
@@ -33,7 +34,11 @@ def salvar_dados_tinydb(dados, db_name = "bitcoin.json"): #passando os dados par
 
 # Bloco de execução principal do script
 if __name__ == "__main__":                  # Verifica se o script está sendo executado diretamente
-    dados_json = extract_dados_bitcoin()         # Chama a função para extrair os dados do Bitcoin
-    dados_tratados = transform_dados_bitcoin(dados_json)  # Chama a função para transformar os dados extraídos
-    #print(dados_tratados)              # Exibe os dados transformados no terminal
-    salvar_dados_tinydb(dados_tratados)  # Chama a função para salvar os dados no banco de dados
+    
+    while True:
+        dados_json = extract_dados_bitcoin()         # Chama a função para extrair os dados do Bitcoin
+        dados_tratados = transform_dados_bitcoin(dados_json)  # Chama a função para transformar os dados extraídos
+        #print(dados_tratados)              # Exibe os dados transformados no terminal
+        salvar_dados_tinydb(dados_tratados)  # Chama a função para salvar os dados no banco de dados
+        time.sleep(15)  # Aguarda 15 segundos antes de repetir o processo
+        
